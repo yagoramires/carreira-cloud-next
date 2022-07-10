@@ -42,7 +42,20 @@ export default function Home({ product }: HomeProps) {
           </p>
           <SubscribeButton priceId={product.priceId} />
         </section>
-        <Image src='/images/cloud-vector.png' alt='' width={600} height={600} />
+        <div className='image'>
+          {/* <img
+            src='/images/cloud-vector.png'
+            alt='cloud'
+            width={600}
+            height={600}
+          /> */}
+          <Image
+            src='/images/cloud-vector.png'
+            alt='cloud'
+            width={600}
+            height={600}
+          />
+        </div>
       </main>
     </>
   );

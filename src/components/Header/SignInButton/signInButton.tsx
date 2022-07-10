@@ -1,16 +1,28 @@
 import { SiGmail } from 'react-icons/si';
 import { FiX } from 'react-icons/fi';
 import styles from './signInButton.module.scss';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 export default function SignInButton() {
-  const isUserLoggedIn = false;
+  const { data: session } = useSession();
 
-  return isUserLoggedIn ? (
-    <button type='button' className={styles.signInButton}>
-      <SiGmail color='#04d361' /> username <FiX className={styles.closeIcon} />
+  // console.log(session);
+
+  return session ? (
+    <button
+      type='button'
+      className={styles.signInButton}
+      onClick={() => signOut()}
+    >
+      <SiGmail color='#04d361' /> {session.user.email}
+      <FiX className={styles.closeIcon} />
     </button>
   ) : (
-    <button type='button' className={styles.signInButton}>
+    <button
+      type='button'
+      className={styles.signInButton}
+      onClick={() => signIn('google')}
+    >
       <SiGmail color='red' /> Sign in with Google
     </button>
   );
