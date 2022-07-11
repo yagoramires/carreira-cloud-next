@@ -1,0 +1,50 @@
+@use '../utils/' as *;
+
+.about__container {
+  @include flex-center;
+  min-height: 100vh;
+}
+
+.about {
+  max-width: 1120px;
+  @include flex-center;
+  margin: 0 auto;
+  column-gap: 2rem;
+
+  &__content {
+    @include flex-center;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 1rem;
+    max-width: 60%;
+  }
+
+  &__image {
+    display: none;
+    @include lg {
+      display: block;
+      width: 50%;
+      animation: fly 5s linear infinite reverse;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 900;
+    margin-top: 2.5rem;
+    align-self: flex-start;
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    margin-top: 1.5rem;
+    text-align: justify;
+
+    span {
+      color: $cian;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,10 +1,15 @@
 import type { GetStaticProps } from 'next';
+import { stripe } from '../services/stripe';
+
 import Head from 'next/head';
-import SubscribeButton from '../components/Home/SubscribeButton/subscribeButton';
 import Image from 'next/image';
 
-import styles from './home.module.scss';
-import { stripe } from '../services/stripe';
+import SubscribeButton from '../components/Main/SubscribeButton/subscribeButton';
+import Cards from '../components/Main/Cards/cards';
+import About from '../components/Main/About/about';
+import Youtube from '../components/Main/Youtube/youtube';
+import Contact from '../components/Main/Contact/contact';
+import Footer from '../components/Footer/footer';
 
 interface HomeProps {
   product: {
@@ -13,7 +18,6 @@ interface HomeProps {
   };
 }
 
-// const Home: NextPage = ({ product }: HomeProps) => {
 export default function Home({ product }: HomeProps) {
   return (
     <>
@@ -22,46 +26,46 @@ export default function Home({ product }: HomeProps) {
         <meta name='description' content='Descrição' />
       </Head>
 
-      <main className={styles.contentContainer}>
-        <section className={styles.contentTexts}>
-          <span>Acelere a sua carreira através da Cloud</span>
-          <h1>
-            Conquiste as <span>melhores</span> oportunidades de TI.
-          </h1>
-          <p>
-            Aprenda a conduzir os mais diversos projetos de Cloud,
-            <br /> e tenha um dos
-            <span>
-              {' '}
-              perfis mais valorizados do mercado por apenas{' '}
-              {(product.amount / 100).toLocaleString('pt-BR', {
-                style: 'currency',
-                currency: 'BRL',
-              })}
-            </span>
-          </p>
-          <SubscribeButton priceId={product.priceId} />
+      <main>
+        <section className='contentContainer'>
+          <div className='contentTexts'>
+            <span>Acelere a sua carreira através da Cloud</span>
+            <h1>
+              Conquiste as <span>melhores</span> oportunidades de TI.
+            </h1>
+            <p>
+              Aprenda a conduzir os mais diversos projetos de Cloud,
+              <br /> e tenha um dos
+              <span>
+                {' '}
+                perfis mais valorizados do mercado por apenas{' '}
+                {(product.amount / 100).toLocaleString('pt-BR', {
+                  style: 'currency',
+                  currency: 'BRL',
+                })}
+              </span>
+            </p>
+            <SubscribeButton priceId={product.priceId} />
+          </div>
+          <div className='image'>
+            <Image
+              src='/images/cloud-vector.png'
+              alt='cloud'
+              width={600}
+              height={600}
+            />
+          </div>
         </section>
-        <div className='image'>
-          {/* <img
-            src='/images/cloud-vector.png'
-            alt='cloud'
-            width={600}
-            height={600}
-          /> */}
-          <Image
-            src='/images/cloud-vector.png'
-            alt='cloud'
-            width={600}
-            height={600}
-          />
-        </div>
+
+        <Youtube />
+        <About />
+        <Cards />
+        <Contact />
+        <Footer />
       </main>
     </>
   );
 }
-
-// export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const price = await stripe.prices.retrieve('price_1LJ1ZlD1bOm9sglnlzgzdObc', {

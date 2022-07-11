@@ -1,10 +1,12 @@
+@use '../utils/' as *;
+
 .subscribeButton {
   height: 4rem;
   width: 260px;
   border: 0;
   border-radius: 2rem;
-  background-color: var(--yellow);
-  color: var(--light-gray);
+  background-color: $yellow;
+  color: $ltgray;
   font-size: 1.25rem;
   font-weight: bold;
 

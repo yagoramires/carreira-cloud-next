@@ -1,0 +1,42 @@
+@use '../utils/' as *;
+
+.course__container {
+  @include flex-center;
+  min-height: 50vh;
+  background-color: $dkblue;
+  margin: 0 auto;
+}
+
+.course {
+  width: 100%;
+  max-width: 1120px;
+  @include flex-center;
+  justify-content: space-between;
+
+  &__content {
+    @include flex-center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__title {
+    color: $gray;
+    font-size: 2rem;
+    line-height: 4.5rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    align-self: flex-start;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    @include button;
+    text-transform: uppercase;
+  }
+
+  iframe {
+    width: 40%;
+    box-shadow: $shadow;
+  }
+}

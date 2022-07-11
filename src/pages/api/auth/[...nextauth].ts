@@ -1,5 +1,10 @@
+import { query as q } from 'faunadb';
+
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
+
+import { fauna } from '../../../services/fauna';
+
 export default NextAuth({
   providers: [
     GoogleProvider({
@@ -14,4 +19,10 @@ export default NextAuth({
       },
     }),
   ],
+  // callbacks: {
+  //   async signIn({ user }) {
+  //     const { email } = user;
+  //     await fauna.query(q.Create(q.Collection('users'), { data: { email } }));
+  //   },
+  // },
 });

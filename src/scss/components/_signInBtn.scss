@@ -1,7 +1,9 @@
+@use '../utils/' as *;
+
 .signInButton {
   height: 3rem;
   border-radius: 3rem;
-  background-color: var(--gray);
+  background-color: $gray;
   color: #737380;
   border: 0;
   padding: 0 1.5rem;
@@ -23,7 +25,7 @@
 
   svg.closeIcon {
     margin-left: 1rem;
-    color: var(--dark-gray);
+    color: $dkgray;
   }
 
   transition: filter 0.3s;

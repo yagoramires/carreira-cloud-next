@@ -1,0 +1,56 @@
+@use './variables' as *;
+
+@keyframes navTransition {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes iconTransition {
+  0% {
+    transform: translateY(150px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoTransition {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobile {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes desktop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

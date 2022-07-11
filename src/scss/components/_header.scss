@@ -1,6 +1,8 @@
+@use '../utils/' as *;
+
 .headerContainer {
   height: 5rem;
-  box-shadow: var(--default-shadow);
+  box-shadow: $shadow;
   background-color: #29539b;
   background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
 }
@@ -10,7 +12,7 @@
   height: 5rem;
   margin: 0 auto;
   padding: 0 2rem;
-  color: var(--light-gray);
+  color: $ltgray;
 
   display: flex;
   align-items: center;
@@ -29,11 +31,11 @@
       transition: color 0.3s;
 
       &:hover {
-        color: var(--cian);
+        color: $cian;
       }
 
       &.active {
-        color: var(--cian);
+        color: $cian;
         font-weight: 700;
       }
 
@@ -44,7 +46,7 @@
         width: 100%;
         bottom: 0;
         left: 0;
-        background-color: var(--cian);
+        background-color: $cian;
       }
     }
   }
