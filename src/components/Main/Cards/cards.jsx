@@ -18,9 +18,9 @@ export default function Card() {
   ];
 
   return (
-    <section id='cards'>
+    <section className='cards' id='cards'>
       <div className='cards__container'>
-        <h1 className='cards__title'>Cards</h1>
+        {/* <h1 className='cards__title'>Cards</h1> */}
         <div className='cards__content'>
           {teste.map((content, i) => {
             return (
