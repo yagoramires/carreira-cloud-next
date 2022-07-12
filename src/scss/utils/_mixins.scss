@@ -16,6 +16,11 @@
   }
 }
 
+@mixin width {
+  width: 90%;
+  margin: 0 auto;
+}
+
 @mixin button {
   margin-top: 1rem !important;
   text-decoration: none;

@@ -1,38 +1,29 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import { FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa';
 
+import styles from './footer.module.scss';
+
 export default function Footer() {
   return (
-    <footer>
-      <div className='social'>
-        {/* <a
-          href='https://www.linkedin.com/'
-          target='_blank'
-          className='social__link'
-        >
-          <FaLinkedin className='social__icon' size={30} />
+    <footer className={styles.footer}>
+      <div className={styles.social}>
+        <a href='https://www.linkedin.com/' target='_blank'>
+          <FaLinkedin size={30} />
         </a>
-        <a
-          href='https://www.instagram.com/'
-          target='_blank'
-          className='social__link'
-        >
-          <FaInstagram className='social__icon' size={30} />
+        <a href='https://www.instagram.com/' target='_blank'>
+          <FaInstagram size={30} />
         </a>
-        <a
-          href='https://www.youtube.com/'
-          target='_blank'
-          className='social__link'
-        >
-          <FaYoutube className='social__icon' size={30} />
-        </a> */}
+        <a href='https://www.youtube.com/' target='_blank'>
+          <FaYoutube size={30} />
+        </a>
       </div>
-      <div className='copyright'>
-        <p className='copyright__text'>
-          © Carreira Cloud 2022 - Todos os direitos reservados | Designed by
-          {/* <a href='https://wa.me/5521969711937' target='_blank'>
+      <div className={styles.copyright}>
+        <p>
+          © Carreira Cloud 2022 - Todos os direitos reservados | Designed by{' '}
+          <a href='https://wa.me/5521969711937' target='_blank'>
             Yago Ramires
-          </a> */}
+          </a>
         </p>
       </div>
     </footer>

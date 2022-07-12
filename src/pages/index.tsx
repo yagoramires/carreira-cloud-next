@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { GetStaticProps } from 'next';
 import { stripe } from '../services/stripe';
 
@@ -5,11 +6,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import SubscribeButton from '../components/Main/SubscribeButton/subscribeButton';
+import SignButton from '../components/SignInButton/signInButton';
 import Cards from '../components/Main/Cards/cards';
 import About from '../components/Main/About/about';
 import Youtube from '../components/Main/Youtube/youtube';
 import Contact from '../components/Main/Contact/contact';
 import Footer from '../components/Footer/footer';
+
+import styles from './home.module.scss';
 
 interface HomeProps {
   product: {
@@ -27,11 +31,11 @@ export default function Home({ product }: HomeProps) {
       </Head>
 
       <main>
-        <section className='contentContainer'>
-          <div className='contentTexts'>
+        <section className={styles.contentContainer}>
+          <div className={styles.contentTexts}>
             <span>Acelere a sua carreira através da Cloud</span>
             <h1>
-              Conquiste as <span>melhores</span> oportunidades de TI.
+              Conquiste as <span>melhores</span> oportunidades de TI
             </h1>
             <p>
               Aprenda a conduzir os mais diversos projetos de Cloud,
@@ -43,20 +47,18 @@ export default function Home({ product }: HomeProps) {
                   currency: 'BRL',
                 })} */}
             </p>
-            <SubscribeButton priceId={product.priceId} />
+            <SignButton></SignButton>
+            {/* <SubscribeButton priceId={product.priceId} /> */}
           </div>
-          <div className='image'>
-            <Image
-              src='/images/cloud-vector.png'
-              alt='cloud'
-              width={600}
-              height={600}
-            />
-          </div>
+          <img
+            src='/images/cloud-vector.png'
+            alt='cloud'
+            className={styles.image}
+          />
         </section>
 
         <About />
-        <Cards />
+        {/* <Cards /> */}
         <Youtube />
         <Contact />
         <Footer />

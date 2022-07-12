@@ -1,19 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image';
 import React from 'react';
 
-// import CloudStorage from '../../assets/cloud_storage.png';
+import styles from './about.module.scss';
 
 export default function About() {
   return (
-    <section className='about__container' id='about'>
-      <div className='about'>
-        <Image
+    <section className={styles.about} id='about'>
+      <div className={styles.aboutContainer}>
+        <img
           src='/images/cloud-storage.png'
           alt='cloud'
-          width={600}
-          height={600}
-        />{' '}
-        <div className='about__content'>
+          className={styles.image}
+        />
+        <div className={styles.aboutText}>
           <h1 className='about__title'>Sobre</h1>
           <p className='about__paragraph'>
             A nossa missão é mudar a vida das pessoas através da

@@ -1,0 +1,108 @@
+@use '../scss/utils/' as *;
+
+.contentContainer {
+  max-width: 1120px;
+  margin: 1rem auto;
+  min-height: calc(100vh - 5rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contentTexts {
+  @include width;
+  max-width: 600px;
+
+  > span {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    font-weight: 900;
+    margin-top: 2.5rem;
+
+    span {
+      color: $cian;
+    }
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    margin-top: 1.5rem;
+
+    span {
+      color: $cian;
+      font-weight: bold;
+    }
+  }
+
+  button {
+    margin-top: 2.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .contentTexts {
+    @include width;
+
+    > span {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      line-height: 4.5rem;
+      font-weight: 900;
+      margin-top: 1.5rem;
+
+      span {
+        color: $cian;
+        font-size: 5rem;
+      }
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+      margin-top: 1rem;
+      text-align: justify;
+
+      span {
+        color: $cian;
+        font-weight: bold;
+      }
+    }
+
+    button {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .image {
+    display: none;
+  }
+}
+
+@include lg {
+  .image {
+    max-width: 400px;
+    height: auto;
+    animation: fly 3s linear infinite;
+  }
+}
+@include xl {
+  .image {
+    max-width: 600px;
+  }
+}
