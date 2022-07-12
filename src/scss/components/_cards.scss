@@ -1,17 +1,10 @@
 @use '../utils/' as *;
 
-.cards__container {
-  @include flex-center;
-  flex-direction: column;
-  max-width: 1120px;
-  margin: 0 auto;
-  row-gap: 2rem;
-}
-
 .cards {
   @include flex-center;
   min-height: 60vh;
-  background-color: $dkblue;
+  margin-bottom: -17rem;
+  // background-color: $dkblue;
   &__title {
     font-size: 2rem;
     line-height: 4.5rem;
@@ -25,6 +18,14 @@
     display: flex;
     justify-content: space-between;
   }
+}
+
+.cards__container {
+  @include flex-center;
+  flex-direction: column;
+  max-width: 1120px;
+  margin: 0 auto;
+  row-gap: 2rem;
 }
 
 .card {
@@ -42,9 +43,9 @@
   border: none;
   // border-radius: 0.25rem;
 
-  opacity: 0;
-  transform: translateX(200px);
-  animation: mobile ease forwards;
+  // opacity: 0;
+  // transform: translateX(200px);
+  // animation: mobile ease forwards;
 
   &__text {
     color: $blue;
@@ -55,19 +56,22 @@
 
   &__icon {
     color: $blue;
-    // margin-right: 2rem;
   }
 
   @include lg {
-    transform: translateX(0);
-    transform: translateY(200px);
-    animation: desktop ease forwards;
+    // transform: translateX(0);
+    // transform: translateY(200px);
+    // animation: desktop ease forwards;
   }
 
   transition: all 0.5s;
 
   &:hover {
     background-color: $blue;
+
+    .card__title {
+      color: #fff;
+    }
 
     .card__text {
       color: #fff;
@@ -79,14 +83,61 @@
   }
 }
 
-.card:nth-child(1) {
-  animation-duration: 0.4s;
+// .card:nth-child(1) {
+//   animation-duration: 0.4s;
+// }
+
+// .card:nth-child(2) {
+//   animation-duration: 0.8s;
+// }
+
+// .card:nth-child(3) {
+//   animation-duration: 1.2s;
+// }
+
+.img {
+  background-size: contain;
+  height: 80px;
+  width: 80px;
+
+  &-cloud {
+    background-image: url(../../../public/images/cloud-computing.png);
+  }
+
+  &-career {
+    background-image: url(../../../public/images/career.png);
+  }
+
+  &-exp {
+    background-image: url(../../../public/images/experience.png);
+  }
 }
 
-.card:nth-child(2) {
-  animation-duration: 0.8s;
+.card:hover .img {
+  background-size: contain;
+  height: 80px;
+  width: 80px;
+
+  &-cloud {
+    background-image: url(../../../public/images/cloud-computing-w.png);
+  }
+
+  &-career {
+    background-image: url(../../../public/images/career-w.png);
+  }
+
+  &-exp {
+    background-image: url(../../../public/images/experience-w.png);
+  }
 }
 
-.card:nth-child(3) {
-  animation-duration: 1.2s;
-}
+// #fademais {
+//   background: -webkit-linear-gradient(
+//     225deg,
+//     #ffaf00 0%,
+//     #fe4d1b 48.15%,
+//     #e70154 100%
+//   ) !important;
+//   -webkit-background-clip: text !important;
+//   -webkit-text-fill-color: transparent !important;
+// }

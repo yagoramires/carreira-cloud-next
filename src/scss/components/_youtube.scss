@@ -2,9 +2,10 @@
 
 .course__container {
   @include flex-center;
-  min-height: 50vh;
+  min-height: 60vh;
   background-color: $dkblue;
   margin: 0 auto;
+  padding: 20rem 0 4rem;
 }
 
 .course {

@@ -36,14 +36,12 @@ export default function Home({ product }: HomeProps) {
             <p>
               Aprenda a conduzir os mais diversos projetos de Cloud,
               <br /> e tenha um dos
-              <span>
-                {' '}
-                perfis mais valorizados do mercado por apenas{' '}
+              <span> perfis mais valorizados do mercado</span>
+              {/* por apenas{' '}
                 {(product.amount / 100).toLocaleString('pt-BR', {
                   style: 'currency',
                   currency: 'BRL',
-                })}
-              </span>
+                })} */}
             </p>
             <SubscribeButton priceId={product.priceId} />
           </div>
@@ -57,9 +55,9 @@ export default function Home({ product }: HomeProps) {
           </div>
         </section>
 
-        <Youtube />
         <About />
         <Cards />
+        <Youtube />
         <Contact />
         <Footer />
       </main>

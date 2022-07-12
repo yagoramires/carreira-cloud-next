@@ -8,7 +8,7 @@ export default function SignInButton() {
 
   return session ? (
     <button type='button' className='signInButton' onClick={() => signOut()}>
-      <SiGmail color='#04d361' /> {session.user.email}
+      <SiGmail color='#04d361' /> {session.user?.email}
       <FiX className='closeIcon' />
     </button>
   ) : (

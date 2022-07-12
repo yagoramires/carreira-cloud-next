@@ -13,7 +13,7 @@ export default function Header() {
           <a href='#about'>Sobre</a>
           <a href='#cards'>Curso</a>
           <a href='#contact'>Contato</a>
-          <a href='/blog'>Blog</a>
+          <a href='#cards'>Blog</a>
         </nav>
         <SignButton></SignButton>
       </div>
