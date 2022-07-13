@@ -17,7 +17,7 @@
 
     img {
       max-width: 200px;
-  
+
       @include sm {
         max-width: 300px;
       }
@@ -32,24 +32,25 @@
       }
     }
   }
-  
+
   form {
     @include flex-center;
     flex-direction: column;
     width: 100%;
     gap: 1.5rem;
-    
+
     @include lg {
       width: 60%;
     }
-    
-    input, textarea {
+
+    input,
+    textarea {
       width: 100%;
       border-radius: 0.5rem;
       padding: 1rem !important;
       border: none;
       box-shadow: $shadow;
-      background-color: $ltgray;
+      background-color: #fff;
 
       &:focus {
         outline: none;
