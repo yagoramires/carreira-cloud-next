@@ -1,15 +1,19 @@
+/* eslint-disable react/jsx-no-target-blank */
+import Link from 'next/link';
 import React from 'react';
+
+import { FaYoutube } from 'react-icons/fa';
+
+import styles from './youtube.module.scss';
 
 export default function Course() {
   return (
-    <section className='course__container' id='youtube'>
-      <div className='course'>
-        <div className='course__content'>
-          <h1 className='course__title'>Nos acompanhe no youtube</h1>
-          <a href='#' className='course__button'>
-            Youtube
-          </a>
-        </div>
+    <section className={styles.youtube__section} id='youtube'>
+      <div className={styles.youtube__container}>
+        <a target='_blank' href={'https://www.youtube.com'}>
+          Nos acompanhe no <span>youtube</span>{' '}
+          <FaYoutube size={40} color={'white'} />
+        </a>
         <iframe
           width='100%'
           height='300'

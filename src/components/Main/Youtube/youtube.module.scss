@@ -1,6 +1,6 @@
-@use '../utils/' as *;
+@use '../../../scss/utils/' as *;
 
-.course__container {
+.youtube__section {
   @include flex-center;
   min-height: 60vh;
   background-color: $dkblue;
@@ -8,20 +8,13 @@
   padding: 20rem 0 4rem;
 }
 
-.course {
-  width: 100%;
+.youtube__container {
+  @include width;
   max-width: 1120px;
   @include flex-center;
   justify-content: space-between;
 
-  &__content {
-    @include flex-center;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  &__title {
+  a {
     color: $gray;
     font-size: 2rem;
     line-height: 4.5rem;
@@ -29,11 +22,17 @@
     margin-top: 2.5rem;
     align-self: flex-start;
     text-transform: uppercase;
+
+    @include flex-center;
+    gap: 1rem;
   }
 
-  &__button {
-    @include button;
-    text-transform: uppercase;
+  a:hover {
+    svg,
+    span {
+      transition: all 0.5s;
+      color: red !important;
+    }
   }
 
   iframe {
