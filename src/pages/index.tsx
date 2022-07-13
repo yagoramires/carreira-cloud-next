@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import type { GetStaticProps } from 'next';
-import { stripe } from '../services/stripe';
+// import { stripe } from '../services/stripe';
 
 import Head from 'next/head';
-import Image from 'next/image';
 
 import SubscribeButton from '../components/Main/SubscribeButton/subscribeButton';
 import SignButton from '../components/SignInButton/signInButton';
@@ -67,20 +66,20 @@ export default function Home({ product }: HomeProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const price = await stripe.prices.retrieve('price_1LJ1ZlD1bOm9sglnlzgzdObc', {
-    expand: ['product'],
-  });
+// export const getStaticProps: GetStaticProps = async () => {
+//   const price = await stripe.prices.retrieve('price_1LJ1ZlD1bOm9sglnlzgzdObc', {
+//     expand: ['product'],
+//   });
 
-  const product = {
-    priceId: price.id,
-    amount: price.unit_amount,
-  };
+//   const product = {
+//     priceId: price.id,
+//     amount: price.unit_amount,
+//   };
 
-  return {
-    props: {
-      product,
-    },
-    revalidate: 60 * 60 * 24, //60seg * 60min * 24h = 1dia
-  };
-};
+//   return {
+//     props: {
+//       product,
+//     },
+//     revalidate: 60 * 60 * 24, //60seg * 60min * 24h = 1dia
+//   };
+// };
