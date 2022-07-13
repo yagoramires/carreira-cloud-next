@@ -34,18 +34,16 @@ export default function Contact() {
   };
 
   return (
-    <section className={styles.contact} id='contact'>
+    <section className={styles.section__contact} id='contact'>
       <div className={styles.title}>
-        <div>
-          <h1 className='contact__title'>Contato</h1>
-        </div>
+        <h1 className={styles.title}>Contato</h1>
 
-        <form ref={form} onSubmit={sendEmail} className='contact__form'>
+        <form ref={form} onSubmit={sendEmail} className={styles.form}>
           <input
             type='text'
             placeholder='Nome'
             name='user_name'
-            className='form__input'
+            className={styles.input}
             onClick={handleClick}
             required
           />
@@ -53,7 +51,7 @@ export default function Contact() {
             type='email'
             placeholder='E-mail'
             name='user_email'
-            className='form__input'
+            className={styles.input}
             onClick={handleClick}
             required
           />
@@ -61,11 +59,11 @@ export default function Contact() {
             type='text'
             placeholder='Mensagem'
             name='message'
-            className='form__text'
+            className={styles.message}
             onClick={handleClick}
             required
           />
-          <input type='submit' value={sent} className='form__button' />
+          <input type='submit' value={sent} className={styles.btn} />
         </form>
       </div>
     </section>

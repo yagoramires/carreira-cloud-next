@@ -11,7 +11,7 @@ export default function Course() {
     <section className={styles.youtube__section} id='youtube'>
       <div className={styles.youtube__container}>
         <a target='_blank' href={'https://www.youtube.com'}>
-          Nos acompanhe no <span>youtube</span>{' '}
+          Nos acompanhe no<span>youtube</span>{' '}
           <FaYoutube size={40} color={'white'} />
         </a>
         <iframe
