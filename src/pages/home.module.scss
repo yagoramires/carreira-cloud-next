@@ -5,14 +5,11 @@
   margin: 1rem auto;
   min-height: calc(100vh - 5rem);
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include flex-center;
 }
 
 .contentTexts {
   @include width;
-  max-width: 600px;
 
   > span {
     font-size: 1.5rem;
@@ -48,8 +45,6 @@
 
 @media (max-width: 450px) {
   .contentTexts {
-    @include width;
-
     > span {
       font-size: 1.5rem;
       font-weight: bold;

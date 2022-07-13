@@ -5,39 +5,83 @@
   min-height: 60vh;
   background-color: $dkblue;
   margin: 0 auto;
-  padding: 20rem 0 4rem;
+
+  padding: 4rem 0;
+
+  @include lg {
+    padding: 20rem 0 4rem;
+  }
 }
 
 .youtube__container {
   @include width;
-  max-width: 1120px;
   @include flex-center;
-  justify-content: space-between;
+  flex-direction: column;
 
-  a {
-    color: $gray;
-    font-size: 2rem;
-    line-height: 4.5rem;
-    font-weight: 700;
-    margin-top: 2.5rem;
-    align-self: flex-start;
-    text-transform: uppercase;
-
-    @include flex-center;
-    gap: 1rem;
+  @include lg {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  a:hover {
-    svg,
-    span {
-      transition: all 0.5s;
-      color: red !important;
-      margin: 0;
+  div {
+    order: 2;
+    max-width: 100%;
+
+    a {
+      @include flex-center;
+      text-align: flex-start;
+      column-gap: 6px;
+      margin-top: 2.5rem;
+
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #fff;
+
+      text-transform: uppercase;
+
+      span {
+        font-weight: bold;
+        border-bottom: 2px solid red;
+      }
+
+      @include sm {
+        font-size: 2.5rem;
+      }
+
+      @include lg {
+        max-width: 90%;
+      }
+
+      @include xl {
+        font-size: 3rem;
+      }
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+      margin-top: 1.5rem;
+      text-align: justify;
+      color: #fff;
+
+      span {
+        color: $cian;
+        font-weight: bold;
+      }
+
+      @include lg {
+        max-width: 90%;
+      }
     }
   }
 
   iframe {
-    width: 40%;
     box-shadow: $shadow;
+    width: 100%;
+
+    @include lg {
+      width: 40%;
+      order: 2;
+    }
   }
 }

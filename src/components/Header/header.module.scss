@@ -18,8 +18,7 @@
     position: relative;
 
     @media (min-width: 721px) {
-      @include width;
-      max-width: 1120px;
+      // @include width;
 
       .mobile {
         display: none;

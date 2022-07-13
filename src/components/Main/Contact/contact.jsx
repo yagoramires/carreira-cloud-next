@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
@@ -35,15 +36,15 @@ export default function Contact() {
 
   return (
     <section className={styles.section__contact} id='contact'>
-      <div className={styles.title}>
-        <h1 className={styles.title}>Contato</h1>
+      <div >
+        <img src='/images/cloud-storage.png' alt='cloud' />
 
-        <form ref={form} onSubmit={sendEmail} className={styles.form}>
+        <form ref={form} onSubmit={sendEmail}>
+        <h2 >Contato</h2>
           <input
             type='text'
             placeholder='Nome'
             name='user_name'
-            className={styles.input}
             onClick={handleClick}
             required
           />
@@ -51,7 +52,6 @@ export default function Contact() {
             type='email'
             placeholder='E-mail'
             name='user_email'
-            className={styles.input}
             onClick={handleClick}
             required
           />
@@ -59,11 +59,10 @@ export default function Contact() {
             type='text'
             placeholder='Mensagem'
             name='message'
-            className={styles.message}
             onClick={handleClick}
             required
           />
-          <input type='submit' value={sent} className={styles.btn} />
+          <button type='submit'>{sent}</button>
         </form>
       </div>
     </section>

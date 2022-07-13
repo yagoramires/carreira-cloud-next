@@ -3,23 +3,50 @@
 .section__contact {
   @include flex-center;
 
-  .title {
-    padding: 4rem 0;
+  div {
     @include width;
+    padding: 4rem 0;
     max-width: 1120px;
     @include flex-center;
     flex-direction: column;
-    align-items: flex-start;
     row-gap: 2rem;
-  }
 
-  .form {
+    @include lg {
+      flex-direction: row;
+    }
+
+    img {
+      display: none;
+      animation: fly 5s linear infinite reverse;
+      
+      @include sm {
+        display: block;
+        max-width: 200px;
+      }
+      @include md {
+        max-width: 300px;
+      }
+      @include lg {
+        order: 2;
+        max-width: 400px;
+      }
+      @include xl {
+        max-width: 500px;
+      }
+    }
+  }
+  
+  form {
     @include flex-center;
     flex-direction: column;
     width: 100%;
-    gap: 1rem;
-    .input,
-    .message {
+    gap: 1.5rem;
+    
+    @include lg {
+      width: 60%;
+    }
+    
+    input, textarea {
       width: 100%;
       border-radius: 0.5rem;
       padding: 1rem !important;
@@ -32,13 +59,12 @@
       }
     }
 
-    .message {
+    textarea {
       resize: none;
     }
 
-    .btn {
+    button {
       @include button;
-      border: none;
     }
   }
 }

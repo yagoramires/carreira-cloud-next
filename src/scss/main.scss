@@ -1,6 +1,5 @@
 //modules
 @use './utils' as *;
-@use './components' as *;
 
 * {
   margin: 0;
@@ -25,6 +24,14 @@ textarea,
 select,
 button {
   font: 400 1rem;
+}
+
+
+h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-top: 2.5rem;
+  align-self: flex-start;
 }
 
 button {

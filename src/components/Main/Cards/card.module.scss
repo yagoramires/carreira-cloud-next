@@ -5,29 +5,22 @@
   min-height: 100vh;
   margin: 4rem 0;
 
-  .cards__content {
+  .cards__container {
     @include width;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    row-gap: 2rem;
   }
 
   @include lg {
     min-height: 60vh;
     margin-bottom: -17rem;
 
-    .cards__content {
+    .cards__container {
       flex-direction: row;
       justify-content: space-between;
     }
   }
-}
-
-.cards__container {
-  @include flex-center;
-  max-width: 1120px;
-  margin: 0 auto;
-  row-gap: 2rem;
 }
 
 .card {
@@ -39,7 +32,7 @@
   width: 100%;
 
   @include lg {
-    width: 30%;
+    max-width: 30%;
   }
 
   background-color: $gray;
@@ -48,7 +41,7 @@
   box-shadow: 2px 2px 10px 1px rgba($color: #000000, $alpha: 0.3);
   border: none;
 
-  .description {
+  p {
     color: $blue;
     font-weight: 400;
     width: 100%;
@@ -57,51 +50,47 @@
 
   transition: all 0.5s;
 
+  div {
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+
+    &:nth-child(1) {
+      background-image: url(../../../../public/images/cloud-computing.png);
+    }
+
+    &:nth-child(2) {
+      background-image: url(../../../../public/images/career.png);
+    }
+
+    &:nth-child(3) {
+      background-image: url(../../../../public/images/experience.png);
+    }
+  }
+
   &:hover {
     background-color: $blue;
 
-    .title {
+    h3 {
       color: #fff;
     }
 
-    .description {
+    p {
       color: #fff;
     }
   }
-}
 
-.img {
-  background-size: contain;
-  height: 80px;
-  width: 80px;
+  &:hover div {
+    &:nth-child(1) {
+      background-image: url(../../../../public/images/cloud-computing-w.png);
+    }
 
-  &:nth-child(1) {
-    background-image: url(../../../../public/images/cloud-computing.png);
-  }
+    &:nth-child(2) {
+      background-image: url(../../../../public/images/career-w.png);
+    }
 
-  &:nth-child(2) {
-    background-image: url(../../../../public/images/career.png);
-  }
-
-  &:nth-child(3) {
-    background-image: url(../../../../public/images/experience.png);
-  }
-}
-
-.card:hover .img {
-  background-size: contain;
-  height: 80px;
-  width: 80px;
-
-  &:nth-child(1) {
-    background-image: url(../../../../public/images/cloud-computing-w.png);
-  }
-
-  &:nth-child(2) {
-    background-image: url(../../../../public/images/career-w.png);
-  }
-
-  &:nth-child(3) {
-    background-image: url(../../../../public/images/experience-w.png);
+    &:nth-child(3) {
+      background-image: url(../../../../public/images/experience-w.png);
+    }
   }
 }

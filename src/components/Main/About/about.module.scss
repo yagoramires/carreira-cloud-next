@@ -1,40 +1,37 @@
 @use '../../../scss/utils/' as *;
 
-.about {
+.about__section {
   @include flex-center;
   min-height: 100vh;
+  padding: 4rem 0;
 
-  .aboutContainer {
-    @include flex-center;
+  .about__container {
     @include width;
-    max-width: 1120px;
+    @include flex-center;
     flex-direction: column;
-    margin: 0 auto;
     column-gap: 2rem;
 
-    &__content {
-      @include flex-center;
-      flex-direction: column;
-      align-items: flex-end;
-      row-gap: 1rem;
-      max-width: 60%;
+    @include lg {
+      flex-direction: row;
     }
 
-    &__image {
+    img {
       display: none;
-      @include lg {
-        display: block;
-        width: 50%;
-        animation: fly 5s linear infinite reverse;
-      }
-    }
+      animation: fly 5s linear infinite reverse;
 
-    &__title {
-      font-size: 2rem;
-      line-height: 2rem;
-      font-weight: 900;
-      margin-top: 2.5rem;
-      align-self: flex-start;
+      @include sm {
+        display: block;
+        max-width: 200px;
+      }
+      @include md {
+        max-width: 300px;
+      }
+      @include lg {
+        max-width: 400px;
+      }
+      @include xl {
+        max-width: 600px;
+      }
     }
 
     p {
@@ -47,42 +44,6 @@
         color: $cian;
         font-weight: bold;
       }
-    }
-  }
-
-  @media (max-width: 576px) {
-    .image {
-      display: none;
-    }
-  }
-
-  @include sm {
-    .image {
-      max-width: 200px;
-      height: auto;
-      animation: fly 3s linear infinite;
-    }
-  }
-
-  @include md {
-    .image {
-      max-width: 300px;
-      height: auto;
-      animation: fly 3s linear infinite;
-    }
-  }
-
-  @include lg {
-    .aboutContainer {
-      flex-direction: row;
-    }
-    .image {
-      max-width: 400px;
-    }
-  }
-  @include xl {
-    .image {
-      max-width: 600px;
     }
   }
 }

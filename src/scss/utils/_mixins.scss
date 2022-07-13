@@ -6,36 +6,47 @@
   justify-content: center;
 }
 
-@mixin pgh-text {
-  color: black;
-  text-align: justify;
-
-  span {
-    display: block;
-    margin: 2rem 0 !important;
-  }
-}
-
 @mixin width {
   width: 90%;
   margin: 0 auto;
+  max-width: 1120px;
 }
 
+// @mixin button {
+//   margin-top: 1rem !important;
+//   text-decoration: none;
+//   padding: 1rem 2rem !important;
+//   color: #fff;
+
+//   background-image: linear-gradient(315deg, #09c6f9 0%, #045de9 74%);
+//   border-radius: 2rem;
+
+//   letter-spacing: 1.3px;
+//   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.6);
+
+//   &:hover {
+//     letter-spacing: 1.1px;
+//     color: #fff;
+//     font-weight: 700;
+//   }
+// }
+
 @mixin button {
-  margin-top: 1rem !important;
-  text-decoration: none;
-  padding: 1rem 2rem !important;
-  color: #fff;
+  height: 3rem;
+  border-radius: 3rem;
+  background-color: $gray;
+  color: #737380;
+  border: 0;
+  padding: 0 1.5rem;
 
-  background-image: linear-gradient(315deg, #09c6f9 0%, #045de9 74%);
-  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  letter-spacing: 1.3px;
-  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
 
   &:hover {
-    letter-spacing: 1.1px;
+    background-color: $blue;
     color: #fff;
-    font-weight: 700;
   }
 }
