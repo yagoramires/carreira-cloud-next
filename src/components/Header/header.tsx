@@ -1,6 +1,8 @@
 import Image from 'next/image';
-import { useState } from 'react';
 import Link from 'next/link';
+import { useState } from 'react';
+
+import SignButton from '../SignInButton/signInButton';
 
 import styles from './header.module.scss';
 
@@ -19,21 +21,22 @@ export default function Header() {
           <Image src='/images/menu.png' alt='menu' width={25} height={25} />
         </div>
         <nav className={active ? styles.show : styles.hide}>
-          <Link href='/' className={styles.active} onClick={handleActive}>
+          <a href='#home' className={styles.active} onClick={handleActive}>
             Home
-          </Link>
+          </a>
           <a href='#about' className='' onClick={handleActive}>
             Sobre
           </a>
           <a href='#cards' className='' onClick={handleActive}>
-            Curso
+            Conteúdo
           </a>
           <a href='#contact' className='' onClick={handleActive}>
             Contato
           </a>
-          <a href='#cards' className='' onClick={handleActive}>
+          <Link href='/'>
             Blog
-          </a>
+          </Link>
+          {/* <SignButton></SignButton> */}
         </nav>
       </div>
     </header>

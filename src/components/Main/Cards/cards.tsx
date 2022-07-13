@@ -12,6 +12,7 @@ export default function Card() {
     <section className={styles.cards__section} id='cards'>
       <div className={styles.cards__container}>
         <div
+          ref={ref}
           className={styles.card}
           style={{
             transform: isInView ? 'none' : 'translateY(200px)',
@@ -29,7 +30,6 @@ export default function Card() {
           </p>
         </div>
         <div
-          ref={ref}
           className={styles.card}
           style={{
             transform: isInView ? 'none' : 'translateY(200px)',

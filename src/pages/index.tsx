@@ -5,7 +5,7 @@ import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import SubscribeButton from '../components/Main/SubscribeButton/subscribeButton';
-import SignButton from '../components/SignInButton/signInButton';
+
 import Cards from '../components/Main/Cards/cards';
 import About from '../components/Main/About/about';
 import Youtube from '../components/Main/Youtube/youtube';
@@ -31,6 +31,7 @@ export default function Home({ product }: HomeProps) {
 
       <main>
         <section className={styles.contentContainer}>
+          <img src='/images/cloud-vector.png' alt='cloud' />
           <div className={styles.contentTexts}>
             <span>Acelere a sua carreira através da Cloud</span>
             <h1>
@@ -46,14 +47,9 @@ export default function Home({ product }: HomeProps) {
                   currency: 'BRL',
                 })} */}
             </p>
-            <SignButton></SignButton>
+
             {/* <SubscribeButton priceId={product.priceId} /> */}
           </div>
-          <img
-            src='/images/cloud-vector.png'
-            alt='cloud'
-            className={styles.image}
-          />
         </section>
 
         <About />
