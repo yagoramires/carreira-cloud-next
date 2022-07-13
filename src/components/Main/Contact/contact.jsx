@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
+import styles from './contact.module.scss';
+
 export default function Contact() {
   const form = useRef();
   const [sent, setSent] = useState('Enviar');
@@ -32,13 +34,10 @@ export default function Contact() {
   };
 
   return (
-    <section className='contact__container' id='contact'>
-      <div className='contact__content'>
+    <section className={styles.contact} id='contact'>
+      <div className={styles.title}>
         <div>
           <h1 className='contact__title'>Contato</h1>
-          <p className='contact__text'>
-            Tire suas dúvidas através do nosso e-mail
-          </p>
         </div>
 
         <form ref={form} onSubmit={sendEmail} className='contact__form'>

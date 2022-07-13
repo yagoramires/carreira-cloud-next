@@ -1,0 +1,61 @@
+@use '../../../scss/utils/' as *;
+
+.contact {
+  @include flex-center;
+  @include width;
+
+  .title {
+    max-width: 1120px;
+    @include flex-center;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 2rem;
+
+    @include sm {
+      width: 80%;
+    }
+
+    @include lg {
+      width: 70%;
+    }
+  }
+
+  .contact__form {
+    @include flex-center;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  // .contact {
+  //   &__title {
+  //   }
+  //   &__text {
+  //   }
+  // }
+
+  .form {
+    &__input,
+    &__text {
+      width: 100%;
+      border-radius: 0.5rem;
+      padding: 1rem !important;
+      border: none;
+      box-shadow: $shadow;
+      background-color: $ltgray;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__text {
+      resize: none;
+    }
+
+    &__button {
+      @include button;
+      border: none;
+    }
+  }
+}

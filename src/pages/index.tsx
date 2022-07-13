@@ -58,7 +58,7 @@ export default function Home({ product }: HomeProps) {
         </section>
 
         <About />
-        {/* <Cards /> */}
+        <Cards />
         <Youtube />
         <Contact />
         <Footer />
