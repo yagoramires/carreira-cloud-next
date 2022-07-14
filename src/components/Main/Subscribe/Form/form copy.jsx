@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
-import styles from './subscribe.module.scss';
-
-// interface FormProps {
-//   status: string;
-//   message: string;
-//   onValidated: any;
-//   CustomForm: any;
-// }
+import styles from './form.module.scss';
 
 const CustomForm = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState('');
@@ -105,7 +98,7 @@ const CustomForm = ({ status, message, onValidated }) => {
   );
 };
 
-export default function Subscribe() {
+const Form = (props) => {
   const url = `https://genhybridsystems.us1.list-manage.com/subscribe/post?u=${process.env.REACT_APP_MAILCHIMP_U}&id=${process.env.REACT_APP_MAILCHIMP_ID}`;
 
   return (
@@ -122,4 +115,6 @@ export default function Subscribe() {
       />
     </div>
   );
-}
+};
+
+export default Form;

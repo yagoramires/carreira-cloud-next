@@ -9,7 +9,14 @@ import Footer from '../components/Footer/footer';
 
 import styles from './home.module.scss';
 
-export default function Home() {
+interface HomeProps {
+  product: {
+    priceId: string;
+    amount: number;
+  };
+}
+
+export default function Home({ product }: HomeProps) {
   return (
     <>
       <Head>
