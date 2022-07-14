@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import SignButton from '../SignInButton/signInButton';
+// import SignButton from '../SignInButton/signInButton';
 
 import styles from './header.module.scss';
 
@@ -27,15 +27,13 @@ export default function Header() {
           <a href='#about' className='' onClick={handleActive}>
             Sobre
           </a>
-          <a href='#cards' className='' onClick={handleActive}>
+          <a href='#content' className='' onClick={handleActive}>
             Conteúdo
           </a>
           <a href='#contact' className='' onClick={handleActive}>
             Contato
           </a>
-          <Link href='/'>
-            Blog
-          </Link>
+          <Link href='/'>Blog</Link>
           {/* <SignButton></SignButton> */}
         </nav>
       </div>

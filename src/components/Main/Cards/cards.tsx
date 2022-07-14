@@ -9,7 +9,7 @@ export default function Card() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section className={styles.cards__section} id='cards'>
+    <section className={styles.cards__section} id='content'>
       <div className={styles.cards__container}>
         <div
           ref={ref}

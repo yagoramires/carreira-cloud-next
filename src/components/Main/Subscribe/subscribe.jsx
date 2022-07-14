@@ -1,14 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
 import styles from './subscribe.module.scss';
-
-// interface FormProps {
-//   status: string;
-//   message: string;
-//   onValidated: any;
-//   CustomForm: any;
-// }
 
 const CustomForm = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState('');
@@ -17,6 +11,7 @@ const CustomForm = ({ status, message, onValidated }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     email &&
       firstName &&
       lastName &&
@@ -39,87 +34,92 @@ const CustomForm = ({ status, message, onValidated }) => {
   };
 
   return (
-    <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
-      <h2 className='mc__title'>
-        {status === 'success' ? 'Inscrito!' : 'Inscreva-se'}
-      </h2>
+    <form
+      className={styles.form}
+      onSubmit={(e) => handleSubmit(e)}
+      id='contact'
+    >
+      <h2>{status === 'success' ? 'Inscrito!' : 'Inscreva-se'}</h2>
 
       {status === 'sending' && (
-        <div className='mc__alert mc__alert--sending'>enviando...</div>
+        <div
+        // className='mc__alert mc__alert--sending'
+        >
+          enviando...
+        </div>
       )}
       {status === 'error' && (
         <div
-          className='mc__alert mc__alert--error'
+          // className='mc__alert mc__alert--error'
           dangerouslySetInnerHTML={{ __html: message }}
         />
       )}
       {status === 'success' && (
         <div
-          className='mc__alert mc__alert--success'
+          // className='mc__alert mc__alert--success'
           dangerouslySetInnerHTML={{ __html: message }}
         />
       )}
 
       {status !== 'success' ? (
-        <div className='mc__field-container'>
+        <div>
           <input
             label='First Name'
-            onChangeHandler={setFirstName}
+            onChange={(e) => setFirstName(e.target.value)}
             type='text'
-            // value={firstName}
-            placeholder='Jane'
-            isRequired
+            placeholder='Nome'
+            required
           />
 
           <input
             label='Last Name'
-            onChangeHandler={setLastName}
+            onChange={(e) => setLastName(e.target.value)}
             type='text'
-            // value={lastName}
-            placeholder='Doe'
-            isRequired
+            placeholder='Sobrenome'
+            required
           />
 
           <input
             label='Email'
-            onChangeHandler={setEmail}
+            onChange={(e) => setEmail(e.target.value)}
             type='email'
-            // value={email}
-            placeholder='your@email.com'
-            isRequired
+            placeholder='exemplo@email.com'
+            required
           />
         </div>
       ) : null}
 
-      {/*Close button appears if form was successfully sent*/}
-      {status === 'success' ? (
-        <p>Enviado!</p>
-      ) : (
-        <input
-          label='subscribe'
-          type='submit'
-          formValues={[email, firstName, lastName]}
-        />
-      )}
+      {status === 'success' ? '' : <input label='subscribe' type='submit' />}
     </form>
   );
 };
 
 export default function Subscribe() {
-  const url = `https://genhybridsystems.us1.list-manage.com/subscribe/post?u=${process.env.REACT_APP_MAILCHIMP_U}&id=${process.env.REACT_APP_MAILCHIMP_ID}`;
+  console.log(
+    process.env.MAILCHIMP_URL,
+    process.env.MAILCHIMP_U,
+    process.env.MAILCHIMP_ID,
+  );
+
+  // const URL = `${process.env.MAILCHIMP_URL}?u=${process.env.MAILCHIMP_U}&id=${process.env.MAILCHIMP_ID}`;
+  const URL = `https://gmail.us18.list-manage.com/subscribe/post?u=e20752138a1a6cbb461cf6e0d&id=eee094a12a`;
 
   return (
-    <div className='mc__form-container'>
+    <section className={styles.section__form}>
       <MailchimpSubscribe
-        url={url}
+        url={URL}
         render={({ subscribe, status, message }) => (
-          <CustomForm
-            status={status}
-            message={message}
-            onValidated={(formData) => subscribe(formData)}
-          />
+          <div>
+            <img src='/images/subscribe.png' alt='cloud' />
+
+            <CustomForm
+              status={status}
+              message={message}
+              onValidated={(formData) => subscribe(formData)}
+            />
+          </div>
         )}
       />
-    </div>
+    </section>
   );
 }

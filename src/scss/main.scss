@@ -26,12 +26,19 @@ button {
   font: 400 1rem;
 }
 
-
 h2 {
   font-size: 3rem;
   font-weight: 900;
   margin-top: 2.5rem;
   align-self: flex-start;
+  background: -webkit-linear-gradient(
+    225deg,
+    #2a2a72 0%,
+    #009ffd 48.15%,
+    #37d5d6 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 button {
