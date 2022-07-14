@@ -66,7 +66,7 @@ const CustomForm = ({ status, message, onValidated }) => {
             label='First Name'
             onChangeHandler={setFirstName}
             type='text'
-            value={firstName}
+            // value={firstName}
             placeholder='Jane'
             isRequired
           />
@@ -75,7 +75,7 @@ const CustomForm = ({ status, message, onValidated }) => {
             label='Last Name'
             onChangeHandler={setLastName}
             type='text'
-            value={lastName}
+            // value={lastName}
             placeholder='Doe'
             isRequired
           />
@@ -84,7 +84,7 @@ const CustomForm = ({ status, message, onValidated }) => {
             label='Email'
             onChangeHandler={setEmail}
             type='email'
-            value={email}
+            // value={email}
             placeholder='your@email.com'
             isRequired
           />

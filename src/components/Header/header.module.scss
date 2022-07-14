@@ -52,8 +52,14 @@
 
     @include md {
       @include width;
+      .show {
+        width: auto;
+        padding: 0;
+      }
+
       .show,
       .hide {
+        font-weight: 400;
         position: static;
         display: flex;
         flex-direction: row;
