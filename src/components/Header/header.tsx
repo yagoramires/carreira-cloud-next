@@ -34,7 +34,7 @@ export default function Header() {
             Contato
           </a>
           <Link href='/'>Blog</Link>
-          <SignButton />
+          {/* <SignButton /> */}
         </nav>
       </div>
     </header>
