@@ -21,7 +21,7 @@ export default function Header() {
           <Image src='/images/menu.png' alt='menu' width={25} height={25} />
         </div>
         <nav className={active ? styles.show : styles.hide}>
-          <a href='#home' className={styles.active} onClick={handleActive}>
+          <a href='#home' className='' onClick={handleActive}>
             Home
           </a>
           <a href='#about' className='' onClick={handleActive}>

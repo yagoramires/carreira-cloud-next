@@ -73,7 +73,7 @@
           height: 5rem;
           line-height: 5rem;
 
-          transition: all 0.3s;
+          transition: color 0.3s;
 
           &:hover {
             color: $cian;
@@ -84,7 +84,8 @@
             font-weight: 700;
           }
 
-          &.active::after {
+          &.active::after,
+          &:hover::after {
             position: absolute;
             content: '';
             height: 3px;
