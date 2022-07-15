@@ -95,19 +95,13 @@ const CustomForm = ({ status, message, onValidated }) => {
 };
 
 export default function Subscribe() {
-  console.log(
-    process.env.MAILCHIMP_URL,
-    process.env.MAILCHIMP_U,
-    process.env.MAILCHIMP_ID,
-  );
-
-  // const URL = `${process.env.MAILCHIMP_URL}?u=${process.env.MAILCHIMP_U}&id=${process.env.MAILCHIMP_ID}`;
-  const URL = `https://gmail.us18.list-manage.com/subscribe/post?u=e20752138a1a6cbb461cf6e0d&id=eee094a12a`;
+  const URL = `${process.env.NEXT_PUBLIC_MAILCHIMP_URL}?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`;
+  // const URL2 = `${process.env.MAILCHIMP_URL}?u=${process.env.MAILCHIMP_U}&id=${process.env.MAILCHIMP_ID}`;
 
   return (
     <section className={styles.section__form}>
       <MailchimpSubscribe
-        url={URL}
+        url={URL2}
         render={({ subscribe, status, message }) => (
           <div>
             <img src='/images/subscribe.png' alt='cloud' />

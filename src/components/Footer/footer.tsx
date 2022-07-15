@@ -18,8 +18,7 @@ export default function Footer() {
           style={{
             transform: isInView ? 'none' : 'translateY(150px)',
             opacity: isInView ? 1 : 0,
-            transition:
-              'opacity 0.9s cubic-bezier(0.17, 0.55, 0.55, 1), transform 1.2s',
+            transition: 'opacity 0.9s, transform 1.2s',
           }}
         >
           <FaLinkedin size={30} />
@@ -30,8 +29,7 @@ export default function Footer() {
           style={{
             transform: isInView ? 'none' : 'translateY(150px)',
             opacity: isInView ? 1 : 0,
-            transition:
-              'opacity 0.9s cubic-bezier(0.17, 0.55, 0.55, 1), transform 0.8s',
+            transition: 'opacity 0.9s, transform 0.8s',
           }}
         >
           <FaInstagram size={30} />
@@ -42,8 +40,7 @@ export default function Footer() {
           style={{
             transform: isInView ? 'none' : 'translateY(150px)',
             opacity: isInView ? 1 : 0,
-            transition:
-              'opacity 0.9s cubic-bezier(0.17, 0.55, 0.55, 1), transform 0.4s',
+            transition: 'opacity 0.9s, transform 0.4s',
           }}
         >
           <FaYoutube size={30} />
