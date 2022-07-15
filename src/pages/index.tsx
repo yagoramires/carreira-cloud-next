@@ -20,7 +20,7 @@ export default function Home({ product }: HomeProps) {
   return (
     <>
       <Head>
-        <title>Início | Carreira Cloud</title>
+        <title>Carreira Cloud</title>
         <meta name='description' content='Descrição' />
       </Head>
 

@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { useState } from 'react';
 
-import SignButton from './SignInButton/signInButton';
+import Image from 'next/image';
 
 import styles from './header.module.scss';
+import ActiveLink from './ActiveLink/ActiveLink';
+import Link from 'next/link';
 
 export default function Header() {
   const [active, setActive] = useState(false);
@@ -17,24 +17,25 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Image src='/images/logo-cian.png' alt='logo' width={40} height={40} />
-        <div className={styles.mobile} onClick={handleActive}>
+        <div className={styles.mobile}>
           <Image src='/images/menu.png' alt='menu' width={25} height={25} />
         </div>
         <nav className={active ? styles.show : styles.hide}>
-          <a href='#home' className='' onClick={handleActive}>
-            Home
-          </a>
-          <a href='#about' className='' onClick={handleActive}>
-            Sobre
-          </a>
-          <a href='#content' className='' onClick={handleActive}>
-            Conteúdo
-          </a>
-          <a href='#contact' className='' onClick={handleActive}>
-            Contato
-          </a>
-          <Link href='/'>Blog</Link>
-          {/* <SignButton /> */}
+          <ActiveLink href='/' activeClassName={styles.active}>
+            <a>Home</a>
+          </ActiveLink>
+          <Link href='/#about'>
+            <a>Sobre</a>
+          </Link>
+          <Link href='/#content'>
+            <a>Conteúdo</a>
+          </Link>
+          <Link href='/#contact'>
+            <a>Contato</a>
+          </Link>
+          <ActiveLink href='/posts' activeClassName={styles.active} prefetch>
+            <a>Blog</a>
+          </ActiveLink>
         </nav>
       </div>
     </header>
