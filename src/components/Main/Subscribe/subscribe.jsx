@@ -96,12 +96,11 @@ const CustomForm = ({ status, message, onValidated }) => {
 
 export default function Subscribe() {
   const URL = `${process.env.NEXT_PUBLIC_MAILCHIMP_URL}?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`;
-  // const URL2 = `${process.env.MAILCHIMP_URL}?u=${process.env.MAILCHIMP_U}&id=${process.env.MAILCHIMP_ID}`;
 
   return (
     <section className={styles.section__form}>
       <MailchimpSubscribe
-        url={URL2}
+        url={URL}
         render={({ subscribe, status, message }) => (
           <div>
             <img src='/images/subscribe.png' alt='cloud' />

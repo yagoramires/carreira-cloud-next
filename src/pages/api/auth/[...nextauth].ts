@@ -7,10 +7,8 @@ import { fauna } from '../../../services/fauna';
 export default NextAuth({
   providers: [
     GoogleProvider({
-      clientId: `305520908752-jc1ev6c59hkq301q19qds9sor6973erg.apps.googleusercontent.com`,
-      clientSecret: `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`,
-      //   clientId: `${process.env.GOOGLE_CLIENT_ID}`,
-      //   clientSecret: `${process.env.GOOGLE_CLIENT_SECRET}`,
+      clientId: `${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}`,
+      clientSecret: `${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET}`,
       authorization: {
         params: {
           prompt: 'consent',
