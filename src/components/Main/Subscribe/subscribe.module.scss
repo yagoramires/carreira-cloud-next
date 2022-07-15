@@ -4,6 +4,8 @@
   @include flex-center;
   min-height: calc(100vh - 9rem);
 
+  padding: 4rem 0;
+
   > div {
     @include width;
     @include flex-center;
@@ -78,8 +80,12 @@
 
     input[type='submit'] {
       @include button;
-      width: 80%;
+      width: 100%;
       font-size: 1rem;
+
+      @include md {
+        width: 80%;
+      }
     }
   }
 }
