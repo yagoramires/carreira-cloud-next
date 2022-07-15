@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.social} ref={ref}>
         <a
-          href='https://www.linkedin.com/'
+          href='https://www.linkedin.com/company/carreira-cloud/about'
           target='_blank'
           style={{
             transform: isInView ? 'none' : 'translateY(150px)',
@@ -24,7 +24,7 @@ export default function Footer() {
           <FaLinkedin size={30} />
         </a>
         <a
-          href='https://www.instagram.com/'
+          href='https://instagram.com/carreira.cloud?igshid=YmMyMTA2M2Y='
           target='_blank'
           style={{
             transform: isInView ? 'none' : 'translateY(150px)',
@@ -35,7 +35,7 @@ export default function Footer() {
           <FaInstagram size={30} />
         </a>
         <a
-          href='https://www.youtube.com/'
+          href='https://www.youtube.com/channel/UCRLmUjn7XB61EYUNX-e5X8w'
           target='_blank'
           style={{
             transform: isInView ? 'none' : 'translateY(150px)',

@@ -25,7 +25,7 @@ export default function Course() {
           width='100%'
           height='300'
           src='https://www.youtube.com/embed/8skzDJrlog8?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0'
-          title='Fazendo um player de vídeo com React #HipstersPontoDicas - @Dev Soutinho'
+          // title='Fazendo um player de vídeo com React #HipstersPontoDicas - @Dev Soutinho'
           frameBorder='0'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
           allowFullScreen
