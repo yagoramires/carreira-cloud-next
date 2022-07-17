@@ -5,7 +5,6 @@ import Cards from '../components/Main/Cards/cards';
 import About from '../components/Main/About/about';
 import Youtube from '../components/Main/Youtube/youtube';
 import Subscribe from '../components/Main/Subscribe/subscribe';
-import Footer from '../components/Footer/footer';
 
 import styles from './home.module.scss';
 
@@ -44,7 +43,6 @@ export default function Home({ product }: HomeProps) {
         <Cards />
         <Youtube />
         <Subscribe />
-        <Footer />
       </main>
     </>
   );

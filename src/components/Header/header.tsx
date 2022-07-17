@@ -16,8 +16,16 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Image src='/images/logo-cian.png' alt='logo' width={40} height={40} />
-        <div className={styles.mobile}>
+        <Link href='/'>
+          <Image
+            src='/images/logo-cian.png'
+            alt='logo'
+            width={40}
+            height={40}
+            style={{ cursor: 'pointer' }}
+          />
+        </Link>
+        <div className={styles.mobile} onClick={handleActive}>
           <Image src='/images/menu.png' alt='menu' width={25} height={25} />
         </div>
         <nav className={active ? styles.show : styles.hide}>
@@ -33,7 +41,7 @@ export default function Header() {
           <Link href='/#contact'>
             <a>Contato</a>
           </Link>
-          <ActiveLink href='/posts' activeClassName={styles.active} prefetch>
+          <ActiveLink href='/posts' activeClassName={styles.active}>
             <a>Blog</a>
           </ActiveLink>
         </nav>

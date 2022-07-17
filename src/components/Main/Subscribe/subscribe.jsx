@@ -89,7 +89,11 @@ const CustomForm = ({ status, message, onValidated }) => {
         </div>
       ) : null}
 
-      {status === 'success' ? '' : <input label='subscribe' type='submit' />}
+      {status === 'success' ? (
+        ''
+      ) : (
+        <input label='subscribe' type='submit' value='Confirmar inscrição' />
+      )}
     </form>
   );
 };
