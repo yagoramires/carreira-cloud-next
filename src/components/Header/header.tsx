@@ -28,7 +28,10 @@ export default function Header() {
         <div className={styles.mobile} onClick={handleActive}>
           <Image src='/images/menu.png' alt='menu' width={25} height={25} />
         </div>
-        <nav className={active ? styles.show : styles.hide}>
+        <nav
+          className={active ? styles.show : styles.hide}
+          onClick={handleActive}
+        >
           <ActiveLink href='/' activeClassName={styles.active}>
             <a>Home</a>
           </ActiveLink>

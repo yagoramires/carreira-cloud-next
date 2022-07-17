@@ -1,7 +1,7 @@
 @use '../scss/utils/' as *;
 
 .main {
-  height: calc(100vh - 5rem);
+  min-height: calc(100vh - 5rem);
   padding: 4rem 0;
 }
 
@@ -20,11 +20,16 @@
     }
 
     time {
-      font-size: 1rem;
+      font-size: 0.8rem;
       display: flex;
       align-items: center;
       color: $dkgray;
-      //   font-weight: 600;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+
+      @include md {
+        font-weight: 500;
+      }
     }
 
     span {
@@ -34,6 +39,7 @@
       align-self: flex-start;
 
       transition: color 0.3s;
+      margin-bottom: 1rem;
     }
 
     p {
